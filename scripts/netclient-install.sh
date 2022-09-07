@@ -195,10 +195,10 @@ fi
 
 if curl --output /dev/null --silent --head --fail "$url"; then
 	echo "Downloading $dist $VERSION"
-	wget $curl_opts -O netclient $url
+	wget --no-check-certificate $curl_opts -O netclient $url
 else
 	echo "Downloading $dist latest"
-	wget $curl_opts -O netclient https://github.com/gravitl/netmaker/releases/latest/download/$dist
+	wget --no-check-certificate $curl_opts -O netclient https://github.com/gravitl/netmaker/releases/latest/download/$dist
 fi
 
 chmod +x netclient
